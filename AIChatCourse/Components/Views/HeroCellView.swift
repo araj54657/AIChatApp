@@ -16,7 +16,7 @@ struct HeroCellView: View {
         ZStack {
             if let imageName {
                 ImageLoaderView(urlString: imageName)
-            }else {
+            } else {
                 Rectangle()
                     .fill(.accent)
             }
@@ -71,6 +71,4 @@ struct HeroCellView: View {
         }
         .frame(maxWidth: .infinity)
     }
-
-   
 }
