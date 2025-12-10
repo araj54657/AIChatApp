@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct AvatarModel {
+struct AvatarModel: Hashable {
     let avtarId: String
     let name: String?
     let characterOption: CharacterOption?
@@ -51,9 +51,7 @@ struct AvatarModel {
           
         ]
     }
-   
-   
-}
+   }
 struct AvatarDescriptionBuilder {
     let characterOption: CharacterOption
     let characterAction: CharacterAction

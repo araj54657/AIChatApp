@@ -40,7 +40,7 @@ struct HeroCellView: View {
                     Color.red.opacity(0),
                     Color.blue.opacity(0.3),
                     Color.orange.opacity(0.4)
-                                       ] , startPoint: .top, endPoint: .bottom)
+                                       ], startPoint: .top, endPoint: .bottom)
             )
         })
         .cornerRadius(16)
