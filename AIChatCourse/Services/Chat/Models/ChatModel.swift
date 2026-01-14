@@ -6,30 +6,15 @@
 //
 
 import Foundation
-extension  Date {
-    func addingTimeInterval(days: Int = 0, hours: Int = 0, minutes: Int = 0) -> Date {
-        let dayInterval = TimeInterval(days * 24 * 60 * 60)
-        let hourInterval = TimeInterval(hours * 60 * 60)
-        let minuteInterval = TimeInterval(minutes * 60)
-        return self.addingTimeInterval(dayInterval + hourInterval + minuteInterval)
-        
-    }
-}
-struct ChatModel {
+
+struct ChatModel: Identifiable{
     let id: String
     let userId: String
     let avatarId: String
     let dateCreated: Date
     let dateModified: Date
      
-    init(id: String, userId: String, avatarId: String, dateCreated: Date, dateModified: Date) {
-        self.id = id
-        self.userId = userId
-        self.avatarId = avatarId
-        self.dateCreated = dateCreated
-        self.dateModified = dateModified
-    }
-    static var mock: ChatModel {
+  static var mock: ChatModel {
         mocks[0]
     }
     static var mocks: [ChatModel] {
