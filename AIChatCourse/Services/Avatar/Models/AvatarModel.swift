@@ -22,7 +22,7 @@ struct AvatarModel: Hashable {
         characterAction: CharacterAction? = nil,
         characterLocation: CharacterLocation? = nil,
         profileImageName: String? = nil,
-        autohorId: String? = nil,
+        autohorId: String? = nil, 
         dateCreated: Date? = nil
     ) {
         self.avtarId = avtarId
@@ -67,7 +67,8 @@ struct AvatarDescriptionBuilder {
         self.characterLocation = avatar.characterLocation ??  .default
     }
     var characterDescription: String {
-        "A \(characterOption.rawValue) that is \(characterAction.rawValue) in the \(characterLocation.rawValue)."
+        let prefix = characterOption.startWithVowel ? "An" : "A"
+        return  "\(prefix) \(characterOption.rawValue) that is \(characterAction.rawValue) in the \(characterLocation.rawValue)."
     }
 }
 enum CharacterOption: String, CaseIterable, Hashable{
@@ -75,14 +76,22 @@ enum CharacterOption: String, CaseIterable, Hashable{
     static var `default`: Self {
         .man
     }
+    var startWithVowel: Bool {
+        switch self {
+        case .alien:
+            return true
+        default:
+            return false
+        }
+    }
 }
-enum CharacterAction: String  {
-    case smiling, sitting, eating, drinking, walking, shoppping, studying, working, relaxing,fighting, crying
+enum CharacterAction: String{
+    case smiling, sitting, eating, drinking, walking, shoppping, studying, working, relaxing, fighting, crying
     static var `default`: Self {
         .smiling
     }
 }
-enum CharacterLocation: String  {
+enum CharacterLocation: String{
     case park, mall, meuseum, city, desert, forest, space
     static var `default`: Self {
         .park

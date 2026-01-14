@@ -45,22 +45,22 @@ struct HeroCellView: View {
     ScrollView {
         VStack {
             HeroCellView()
-                .frame(width: 300,height: 200)
+                .frame(width: 300, height: 200)
             
             HeroCellView()
-                .frame(width: 300,height: 400)
+                .frame(width: 300, height: 400)
             
             HeroCellView()
-                .frame(width: 300,height: 400)
+                .frame(width: 300, height: 400)
             
             HeroCellView(imageName: nil)
-                .frame(width: 300,height: 200)
+                .frame(width: 300, height: 200)
             
             HeroCellView(title: nil)
-                .frame(width: 300,height: 200)
+                .frame(width: 300, height: 200)
             
             HeroCellView(subTitle: nil)
-                .frame(width: 300,height: 200)
+                .frame(width: 300, height: 200)
             
         }
         .frame(maxWidth: .infinity)
