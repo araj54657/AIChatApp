@@ -41,7 +41,7 @@ struct OnboardingCompletedView: View {
         }
      
             .callToActionButton()
-            .anyButton(.press){
+            .anyButton(.press) {
                 onFinishButtonPressed()
             }
       

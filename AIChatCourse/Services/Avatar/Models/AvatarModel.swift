@@ -71,7 +71,7 @@ struct AvatarDescriptionBuilder {
         return  "\(prefix) \(characterOption.rawValue) that is \(characterAction.rawValue) in the \(characterLocation.rawValue)."
     }
 }
-enum CharacterOption: String, CaseIterable, Hashable{
+enum CharacterOption: String, CaseIterable, Hashable {
     case man, woman, alien, dog, cat
     static var `default`: Self {
         .man
@@ -85,13 +85,13 @@ enum CharacterOption: String, CaseIterable, Hashable{
         }
     }
 }
-enum CharacterAction: String{
+enum CharacterAction: String {
     case smiling, sitting, eating, drinking, walking, shoppping, studying, working, relaxing, fighting, crying
     static var `default`: Self {
         .smiling
     }
 }
-enum CharacterLocation: String{
+enum CharacterLocation: String {
     case park, mall, meuseum, city, desert, forest, space
     static var `default`: Self {
         .park

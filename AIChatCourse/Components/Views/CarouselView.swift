@@ -41,7 +41,7 @@ struct CarouselView<Content: View, T: Hashable>: View {
                 updateSelection()
             }
             
-            HStack(spacing:8) {
+            HStack(spacing: 8) {
                 ForEach(items, id: \.self) { item in
                     Circle()
                         .fill(.accent)
