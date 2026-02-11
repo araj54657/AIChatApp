@@ -1,5 +1,3 @@
-
-//
 //  Color+EXT.swift
 //  AIChatCourse
 //

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CarouselView<Content: View, T: Hashable>: View {
+    
     var items: [T]
     @ViewBuilder var content: (T) -> Content
     @State private var selection: T?
@@ -17,42 +18,40 @@ struct CarouselView<Content: View, T: Hashable>: View {
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 0) {
                     ForEach(items, id: \.self) { item in
-                       content(item)
-                        .scrollTransition(.interactive.threshold(.visible(0.95)), transition: { content, phase in
-                            content
-                                .scaleEffect(phase.isIdentity ? 1 : 0.95)
-                            
-                        })
+                        content(item)
+                            .scrollTransition(.interactive.threshold(.visible(0.95)), transition: { content, phase in
+                                content
+                                    .scaleEffect(phase.isIdentity ? 1 : 0.9)
+                            })
                             .containerRelativeFrame(.horizontal, alignment: .center)
                             .id(item)
-                        
                     }
-                   }
+                }
             }
-            .frame(height: 300)
+            .frame(height: 200)
             .scrollIndicators(.hidden)
             .scrollTargetLayout()
             .scrollTargetBehavior(.paging)
             .scrollPosition(id: $selection)
-            .onChange(of: items.count) { _, _ in
-                updateSelection()
-            }
+            .onChange(of: items.count, { _, _ in
+                updateSelectionIfNeeded()
+            })
             .onAppear {
-                updateSelection()
+                updateSelectionIfNeeded()
             }
             
             HStack(spacing: 8) {
                 ForEach(items, id: \.self) { item in
                     Circle()
-                        .fill(.accent)
+                        .fill(item == selection ? .accent : .secondary.opacity(0.5))
                         .frame(width: 8, height: 8)
-                    
                 }
-                .animation(.linear, value: selection)
             }
+            .animation(.linear, value: selection)
         }
     }
-    private func updateSelection() {
+    
+    private func updateSelectionIfNeeded() {
         if selection == nil || selection == items.last {
             selection = items.first
         }

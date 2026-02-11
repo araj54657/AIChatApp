@@ -87,7 +87,5 @@ struct ChatRowCelViewBuilder: View {
         }, getLastChatMessage: {
             nil
         })
-    
-       
     }
    }
