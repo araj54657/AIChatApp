@@ -8,18 +8,15 @@
 import SwiftUI
 
 struct ChatBubbleView: View {
-    
     var text: String = "This is sample text."
     var textColor: Color = .primary
     var backgroundColor: Color = Color(uiColor: .systemGray6)
     var showImage: Bool = true
     var imageName: String?
     let offset: CGFloat = 14
-    
-    
+
     var body: some View {
-        
-        HStack( alignment: .top, spacing: 8) {
+        HStack(alignment: .top, spacing: 8) {
             if showImage {
                 ZStack {
                     if let imageName {
@@ -30,12 +27,10 @@ struct ChatBubbleView: View {
                     }
                 }
                 .frame(width: 45, height: 45)
-               .clipShape(Circle())
+                .clipShape(Circle())
                 .offset(y: offset)
             }
-           
-         
-            
+
             Text(text)
                 .font(.body)
                 .foregroundColor(textColor)
@@ -54,7 +49,6 @@ struct ChatBubbleView: View {
             ChatBubbleView()
             ChatBubbleView(text: "This is  a chat bubble with a lot of text  that wraps to multiple lines and it keeps on going.This is  a chat bubble with a lot of text  that wraps to multiple lines and it keeps on going.")
             ChatBubbleView(
-                
                 textColor: .white,
                 backgroundColor: .accent,
                 showImage: false,
@@ -62,13 +56,12 @@ struct ChatBubbleView: View {
             )
             ChatBubbleView(
                 text: "This is  a chat bubble with a lot of text  that wraps to multiple lines and it keeps on going.This is  a chat bubble with a lot of text  that wraps to multiple lines and it keeps on going.",
-            textColor: .white,
-            backgroundColor: .accent,
-                showImage:  false ,
-            imageName: nil
-                )
+                textColor: .white,
+                backgroundColor: .accent,
+                showImage: false,
+                imageName: nil
+            )
         }
         .padding(8)
     }
-   
 }

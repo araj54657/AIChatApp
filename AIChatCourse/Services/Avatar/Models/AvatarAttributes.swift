@@ -5,7 +5,6 @@
 //  Created by Avinash Kumar on 06/03/26.
 //
 
-
 enum CharacterOption: String, CaseIterable, Hashable {
     case man, woman, alien, dog, cat
     static var `default`: Self {
@@ -20,13 +19,13 @@ enum CharacterOption: String, CaseIterable, Hashable {
         }
     }
 }
-enum CharacterAction: String, CaseIterable, Hashable{
+enum CharacterAction: String, CaseIterable, Hashable {
     case smiling, sitting, eating, drinking, walking, shoppping, studying, working, relaxing, fighting, crying
     static var `default`: Self {
         .smiling
     }
 }
-enum CharacterLocation: String,CaseIterable, Hashable {
+enum CharacterLocation: String, CaseIterable, Hashable {
     case park, mall, meuseum, city, desert, forest, space
     static var `default`: Self {
         .park
