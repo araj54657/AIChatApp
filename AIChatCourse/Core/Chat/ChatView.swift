@@ -74,7 +74,7 @@ import SwiftUI
                       .anyButton(.plain, action: {
                           onSendMessagePressed()
                       })
-                  ,alignment: .trailing
+                  , alignment: .trailing
               )
               .background(
                   ZStack {
