@@ -17,7 +17,7 @@ struct ProfileView: View {
     @State private var path: [NavigationPathOption] = []
 
     var body: some View {
-        NavigationStack(path: $path)  {
+        NavigationStack(path: $path) {
             List {
                 myInfoSection
                 myAvatarsSection
