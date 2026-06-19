@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1D3AC83D2EAB578B0027D790 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1D3AC83C2EAB578B0027D790 /* SDWebImageSwiftUI */; };
 		1D877F232F37E4F400E8FCEA /* SwiftfulUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 1D877F222F37E4F400E8FCEA /* SwiftfulUtilities */; };
+		1DA10F492FE583B700F084C6 /* GoogleService-Info .plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DA10F482FE583B700F084C6 /* GoogleService-Info .plist */; };
+		1DA10F4C2FE5847900F084C6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1DA10F4B2FE5847900F084C6 /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DA10F482FE583B700F084C6 /* GoogleService-Info .plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info .plist"; sourceTree = "<group>"; };
 		1DA2B3F92E9DB99D0078D59D /* AIChatCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIChatCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA2B4072E9DB99E0078D59D /* AIChatCourseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIChatCourseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA2B4112E9DB99E0078D59D /* AIChatCourseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIChatCourseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D3AC83D2EAB578B0027D790 /* SDWebImageSwiftUI in Frameworks */,
+				1DA10F4C2FE5847900F084C6 /* FirebaseAuth in Frameworks */,
 				1D877F232F37E4F400E8FCEA /* SwiftfulUtilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +90,7 @@
 				1DA2B40A2E9DB99E0078D59D /* AIChatCourseTests */,
 				1DA2B4142E9DB99E0078D59D /* AIChatCourseUITests */,
 				1DA2B3FA2E9DB99D0078D59D /* Products */,
+				1DA10F482FE583B700F084C6 /* GoogleService-Info .plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +127,7 @@
 			packageProductDependencies = (
 				1D3AC83C2EAB578B0027D790 /* SDWebImageSwiftUI */,
 				1D877F222F37E4F400E8FCEA /* SwiftfulUtilities */,
+				1DA10F4B2FE5847900F084C6 /* FirebaseAuth */,
 			);
 			productName = AIChatCourse;
 			productReference = 1DA2B3F92E9DB99D0078D59D /* AIChatCourse.app */;
@@ -208,6 +214,7 @@
 			packageReferences = (
 				1D3AC83B2EAB578B0027D790 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				1D877F212F37E4F400E8FCEA /* XCRemoteSwiftPackageReference "SwiftfulUtilities" */,
+				1DA10F4A2FE5847900F084C6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1DA2B3FA2E9DB99D0078D59D /* Products */;
@@ -226,6 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DA10F492FE583B700F084C6 /* GoogleService-Info .plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,6 +671,14 @@
 				minimumVersion = 1.1.7;
 			};
 		};
+		1DA10F4A2FE5847900F084C6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.15.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -675,6 +691,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1D877F212F37E4F400E8FCEA /* XCRemoteSwiftPackageReference "SwiftfulUtilities" */;
 			productName = SwiftfulUtilities;
+		};
+		1DA10F4B2FE5847900F084C6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DA10F4A2FE5847900F084C6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
